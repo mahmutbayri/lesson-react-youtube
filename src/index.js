@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import ReactDOM from 'react-dom';
+import Header from './components/header';
 import SearchBar from './components/search_bar';
 import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
@@ -38,12 +39,15 @@ class App extends Component {
 
         return (
             <Fragment>
+                <Header />
                 <SearchBar onSearchTermChange={videoSearch} />
-                <VideoDetail video={this.state.selectedVideo} />
-                <VideoList
-                    onVideoSelect={selectedVideo => this.setState({ selectedVideo })}
-                    videos={this.state.videos}
-                />
+                <div class="row">
+                    <VideoDetail video={this.state.selectedVideo} />
+                    <VideoList
+                        onVideoSelect={selectedVideo => this.setState({ selectedVideo })}
+                        videos={this.state.videos}
+                    />
+                </div>
             </Fragment>
         )
     }

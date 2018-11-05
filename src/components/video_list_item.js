@@ -4,20 +4,16 @@ import PropTypes from 'prop-types';
 const VideoListItem = ({ video, onVideoSelect }) => {
     const imageUrl = video.snippet.thumbnails.default.url;
     return (
-        <li className="list-group-item" onClick={() => onVideoSelect(video)}>
-            <div className="video-list media">
-                <div className="media-left">
-                    <img className="media-object" src={imageUrl} />
-                </div>
-                <div className="media-body">
-                    <div className="media-heading">
-                        {video.snippet.title}
-                    </div>
-                </div>
+        <li className="media my-4" onClick={() => onVideoSelect(video)}>
+            <img className="mr-3" src={imageUrl} alt="Generic placeholder image" />
+            <div className="media-body">
+                <h5 className="mt-0 mb-1">{video.snippet.title}</h5>
             </div>
         </li>
     );
 };
+
+
 
 
 VideoListItem.propTypes = {

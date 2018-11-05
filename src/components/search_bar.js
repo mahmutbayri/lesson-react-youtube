@@ -11,12 +11,17 @@ class SearchBar extends Component {
     }
 
     render() {
-        return <div className="search-bar">
-            <input
-                value={this.state.term}
-                onChange={event => this.onInputChange(event.target.value)}
-            />
-        </div>;
+        return <div className="row" style={{ marginBottom: 20 }}>
+            <div className="col-md">
+                <div class="input-group">
+                    <input
+                        className="form-control"
+                        value={this.state.term}
+                        onChange={event => this.onInputChange(event.target.value)}
+                    />
+                </div>
+            </div>
+        </div>
     }
 
     /**
