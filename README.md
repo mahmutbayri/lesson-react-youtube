@@ -1,5 +1,5 @@
 # Lesson: React Youtube
-This repository was created to make some practice on reactjs with using youtube search api.
+This repository was created to do some practices on reactjs with using youtube search api.
 
 # Installation
 To install dependencies;
@@ -8,8 +8,12 @@ To install dependencies;
 
 # Start Develoment Server
 
-    npm run start
+    yarn start
 
 # Build
 
-    npm run build
+    yarn build
+
+# Preview
+
+https://mahmutbayri.github.io/lesson-react-youtube/

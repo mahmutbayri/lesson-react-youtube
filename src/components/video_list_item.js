@@ -14,8 +14,6 @@ const VideoListItem = ({ video, onVideoSelect }) => {
 };
 
 
-
-
 VideoListItem.propTypes = {
     video: PropTypes.shape({
         snippet: PropTypes.shape({
