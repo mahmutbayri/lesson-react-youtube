@@ -13,7 +13,7 @@ class SearchBar extends Component {
     render() {
         return <div className="row" style={{ marginBottom: 20 }}>
             <div className="col-md">
-                <div class="input-group">
+                <div className="input-group">
                     <input
                         className="form-control"
                         value={this.state.term}

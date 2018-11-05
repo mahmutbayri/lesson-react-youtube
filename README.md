@@ -5,3 +5,11 @@ This repository was created to make some practice on reactjs with using youtube 
 To install dependencies;
 
     yarn install
+
+# Start Develoment Server
+
+    npm run start
+
+# Build
+
+    npm run build

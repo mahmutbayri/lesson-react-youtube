@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 const VideoListItem = ({ video, onVideoSelect }) => {
     const imageUrl = video.snippet.thumbnails.default.url;
     return (
-        <li className="media my-4" onClick={() => onVideoSelect(video)}>
-            <img className="mr-3" src={imageUrl} alt="Generic placeholder image" />
+        <li className="media my-4 video-list-item" onClick={() => onVideoSelect(video)}>
+            <img className="mr-3" src={imageUrl} />
             <div className="media-body">
                 <h5 className="mt-0 mb-1">{video.snippet.title}</h5>
             </div>
