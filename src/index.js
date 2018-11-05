@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component, Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import SearchBar from './components/search_bar';
 import VideoList from './components/video_list';
@@ -16,11 +16,14 @@ class App extends Component {
             selectedVideo: null,
         };
 
-        this.videoSearch('surfboards');
+        this.videoSearch('resident evil');
     }
 
+    /**
+     * @param string term 
+     */
     videoSearch(term) {
-        YTSearch({key: API_KEY, term: term}, (videos) => {
+        YTSearch({ key: API_KEY, term: term }, (videos) => {
             this.setState({
                 videos: videos,
                 selectedVideo: videos[0],
@@ -34,19 +37,19 @@ class App extends Component {
         }, 300);
 
         return (
-            <div>
-                <SearchBar onSearchTermChange={videoSearch}/>
-                <VideoDetail video={this.state.selectedVideo}/>
+            <Fragment>
+                <SearchBar onSearchTermChange={videoSearch} />
+                <VideoDetail video={this.state.selectedVideo} />
                 <VideoList
-                    onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+                    onVideoSelect={selectedVideo => this.setState({ selectedVideo })}
                     videos={this.state.videos}
                 />
-            </div>
+            </Fragment>
         )
     }
 }
 
 ReactDOM.render(
-    <App/>,
+    <App />,
     document.querySelector('.container'),
 );

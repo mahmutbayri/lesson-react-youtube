@@ -1,4 +1,5 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class SearchBar extends Component {
 
@@ -18,12 +19,19 @@ class SearchBar extends Component {
         </div>;
     }
 
+    /**
+     * @param string term 
+     */
     onInputChange(term) {
         this.setState({
-            term: term
+            term: term,
         });
         this.props.onSearchTermChange(term);
     }
 }
+
+SearchBar.propTypes = {
+    onSearchTermChange: PropTypes.func.isRequired,
+};
 
 export default SearchBar;

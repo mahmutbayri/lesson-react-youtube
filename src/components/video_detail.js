@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const VideoDetail = ({video}) => {
+const VideoDetail = ({ video }) => {
 
-    if(!video) {
+    if (!video) {
         return <div>Loading...</div>
     }
 
@@ -20,6 +21,18 @@ const VideoDetail = ({video}) => {
             </div>
         </div>
     )
+};
+
+VideoDetail.propTypes = {
+    video: PropTypes.shape({
+        snippet: PropTypes.shape({
+            title: PropTypes.string.isRequired,
+            description: PropTypes.string.isRequired,
+        }),
+        id: PropTypes.shape({
+            videoId: PropTypes.string.isRequired,
+        })
+    })
 };
 
 export default VideoDetail;
